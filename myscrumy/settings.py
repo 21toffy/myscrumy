@@ -79,10 +79,10 @@ DATABASES = {
     'default': {
         ' ENGINE ': 'django.db.backends.mysql',
         ' NAME ': 'second_db',
-        ' USER ':'tofunmi',
+        ' USER ':'root',
         ' HOST ':'localhost',
         ' PORT ':'8000',
-        'PASSWORD':'password',
+        ' PASSWORD':'password',
     }
 }
 
