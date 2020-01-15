@@ -1,3 +1,3 @@
 from django.http import HttpResponse
-def get_grading_parameters(request):
+def index(request):
     return HttpResponse("This is a Scrum Application")
