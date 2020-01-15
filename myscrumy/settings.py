@@ -75,16 +75,7 @@ WSGI_APPLICATION = 'myscrumy.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         ' NAME ': ' second_db ',
-#         ' USER ':'root',
-#         ' HOST ':' localhost ',
-#         ' PORT ':'',
-#         ' PASSWORD':'',
-#     }
-# }
+
 
 DATABASES = {
     'default': {
