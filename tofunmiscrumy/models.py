@@ -8,13 +8,14 @@ class GoalStatus(models.Model):
         return self.status_name
 
 class ScrumyGoals(models.Model):
+    user = models.ForeignKey(User, on_delete = models.CASCADE, related_name="user_goal")
     goal_name = models.CharField(max_length=50) 
     goal_id = models.IntegerField ()
     created_by = models.CharField(max_length=50)
     moved_by = models.CharField(max_length=50)
     owner = models.CharField(max_length=50)
     goal_status = models.ForeignKey(GoalStatus, on_delete = models.PROTECT)
-    user = models.ForeignKey(User, on_delete = models.CASCADE, related_name="user_goal")
+    
     
     def __str__(self):
         return self.goal_name
