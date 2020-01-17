@@ -2,20 +2,19 @@ from django.db import models
 from django.contrib.auth.models import User 
 
 class GoalStatus(models.Model):
-    status_name = models.CharField(max_length=50)
+    status_name = models.CharField(max_length=100)
 
     def __str__(self):
         return self.status_name
 
 class ScrumyGoals(models.Model):
-    user = models.ForeignKey(User, on_delete = models.CASCADE, related_name="user_goal")
-    goal_name = models.CharField(max_length=50) 
+    user = models.ForeignKey(User, on_delete = models.PROTECT, related_name="user_goal")
+    goal_name = models.CharField(max_length=100) 
     goal_id = models.IntegerField ()
-    created_by = models.CharField(max_length=50)
-    moved_by = models.CharField(max_length=50)
-    owner = models.CharField(max_length=50)
+    created_by = models.CharField(max_length=100)
+    moved_by = models.CharField(max_length=100)
+    owner = models.CharField(max_length=100)
     goal_status = models.ForeignKey(GoalStatus, on_delete = models.PROTECT)
-    
     
     def __str__(self):
         return self.goal_name
