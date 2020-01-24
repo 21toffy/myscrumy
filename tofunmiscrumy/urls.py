@@ -5,6 +5,7 @@ from . import views
 
 urlpatterns = [
     path('tofunmiscrumy/', views.index),
+    path('scrumygoals/', views.scrumygoals),
 ]
 
 
