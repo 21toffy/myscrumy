@@ -1,3 +1,6 @@
 from django.http import HttpResponse
+from django.contrib.auth.models import User
+from .models import GoalStatus, ScrumyGoals, ScrumyHistory
 def index(request):
-    return HttpResponse("This is a Scrum Application")
+    goal_name = ScrumyGoals.objects.filter(goal_name='Learn Django') 
+    return HttpResponse(goal_name)
