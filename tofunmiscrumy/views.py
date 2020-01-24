@@ -13,10 +13,11 @@ def index(request):
 
 def scrumygoals(request):
     scrumygoals =  ScrumyGoals.objects.all()
-    return HttpResponse(scrumygoals)
+    return HttpResponse(f'{scrumygoals}')
 
 
 
 
-# def move_goal(request, goal_id):
-#     goalid = 
+def move_goal(request, goal_id):
+    goal_id = ScrumyGoals.objects.get(goal_id=goal_id)
+    return HttpResponse(goal_id)
