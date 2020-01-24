@@ -6,6 +6,7 @@ from . import views
 urlpatterns = [
     path('tofunmiscrumy/', views.index),
     path('scrumygoals/', views.scrumygoals),
+    path('query_filter', views.query_filter),
 ]
 
 
