@@ -10,6 +10,10 @@ urlpatterns = [
     path('scrumygoals', views.scrumygoals),
     path('query_filter', views.query_filter),
     path('movegoal/<int:goal_id>', views.move_goal),
+    path('addgoal', views.add_goal),
+
+    path('home', views.home),
+    
 ]
 
 
