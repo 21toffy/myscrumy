@@ -1,8 +1,9 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from django.contrib.auth.models import User
 from .models import GoalStatus, ScrumyGoals, ScrumyHistory
 from random import randint
 from django.shortcuts import render, get_object_or_404, redirect
+from django.core.exceptions import ObjectDoesNotExist
 
 
 def query_filter(request, *args, **kwargs):
@@ -20,9 +21,18 @@ def index(request):
 
 
 
+
 def move_goal(request, goal_id):
-    goal_id = ScrumyGoals.objects.get(goal_id=goal_id)
-    return HttpResponse(goal_id)
+    error={'error':' DOES NOT EXIST'}
+    try:
+        goal_id = ScrumyGoals.objects.get(goal_id=goal_id)
+    except ScrumyGoals.DoesNotExist:
+        return render(request, 'tofunmiscrumy/exception.html', error)
+    else:
+        return HttpResponse(goal_id.goal_name)
+
+    
+    
 
 
 
